@@ -102,7 +102,6 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
                     </tbody>
                 </table>
             </div>
-
             <div class="box-footer clearfix">
                 <ul class="pagination pagination-sm no-margin pull-right">
                     <li><?= $this->Paginator->prev('< ' . __('previous')) ?></li>
