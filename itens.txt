@@ -1,6 +1,0 @@
-1 - concluído
-index.html retirado de http://localhost/adminltecode/pages/tables/data.html
-view.html retirado de http://localhost/adminltecode/pages/tables/simple.html
-form.html retirado de http://localhost/adminltecode/pages/forms/general.html mais especificamente Quick Example
-
-2 - em producao 
