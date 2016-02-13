@@ -1,4 +1,15 @@
 {
-    "name": "muriloangelo/AdminLTE",
+    "name": "monolog/monolog",
+    "type": "Plugin",
     "description": "Plugin for CakePHP 3",
+    "keywords": ["Theme", "Plugin", "Template", "AdminLTE"],
+    "homepage": "https://github.com/murilolopes/adminLTE",
+    "authors": [
+        {
+            "name": "Murilo Ângelo",
+            "email": "muriloangelo10@gmail.com",
+            "homepage": "https://github.com/murilolopes",
+            "role": "Developer"
+        }
+    ],
 }
