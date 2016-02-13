@@ -11,5 +11,10 @@
             "homepage": "https://github.com/murilolopes",
             "role": "Developer"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "AdminLTE\\": "src"
+        }
+    }
 }
