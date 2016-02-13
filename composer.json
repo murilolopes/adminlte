@@ -1,5 +1,5 @@
 {
-    "name": "muriloangelo/AdminLTE",
+    "name": "muriloangelo/adminlte",
     "type": "Plugin",
     "description": "Plugin for CakePHP 3",
     "keywords": ["Theme", "Plugin", "Template", "AdminLTE"],
