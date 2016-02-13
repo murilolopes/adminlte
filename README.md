@@ -1,2 +1,4 @@
-# adminLTE
-Plugin for CakePHP 3.x
+# AdminLTE
+Plugin do tema [AdminLTE](https://almsaeedstudio.com/preview) para CakePHP 3x
+
+#Install
