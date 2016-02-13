@@ -51,32 +51,42 @@ $groupedFields = collection($fields)
 $groupedFields += ['number' => [], 'string' => [], 'boolean' => [], 'date' => [], 'text' => []];
 $pk = "\$$singularVar->{$primaryKey[0]}";
 %>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit <%= $singularHumanName %>'), ['action' => 'edit', <%= $pk %>]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete <%= $singularHumanName %>'), ['action' => 'delete', <%= $pk %>], ['confirm' => __('Are you sure you want to delete # {0}?', <%= $pk %>)]) ?> </li>
-        <li><?= $this->Html->link(__('List <%= $pluralHumanName %>'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New <%= $singularHumanName %>'), ['action' => 'add']) ?> </li>
-<%
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title"><%= $singularHumanName %></h3>
+        <div class="box-tools pull-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-default">Actions</button>
+                <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><?= $this->Html->link(__('Edit <%= $singularHumanName %>'), ['action' => 'edit', <%= $pk %>]) ?> </li>
+                    <li><?= $this->Form->postLink(__('Delete <%= $singularHumanName %>'), ['action' => 'delete', <%= $pk %>], ['confirm' => __('Are you sure you want to delete # {0}?', <%= $pk %>)]) ?> </li>
+                    <li><?= $this->Html->link(__('List <%= $pluralHumanName %>'), ['action' => 'index']) ?> </li>
+                    <li><?= $this->Html->link(__('New <%= $singularHumanName %>'), ['action' => 'add']) ?> </li>
+                    <li class="divider"></li>
+                    <%
     $done = [];
     foreach ($associations as $type => $data) {
         foreach ($data as $alias => $details) {
             if ($details['controller'] !== $this->name && !in_array($details['controller'], $done)) {
 %>
-        <li><?= $this->Html->link(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']) ?> </li>
+                    <li><?= $this->Html->link(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']) ?> </li>
+                    <li><?= $this->Html->link(__('New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']) ?> </li>
 <%
                 $done[] = $details['controller'];
             }
         }
     }
 %>
-    </ul>
-</nav>
-<div class="<%= $pluralVar %> view large-9 medium-8 columns content">
-    <h3><?= h($<%= $singularVar %>-><%= $displayField %>) ?></h3>
-    <table class="vertical-table">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
 <% if ($groupedFields['string']) : %>
 <% foreach ($groupedFields['string'] as $field) : %>
 <% if (isset($associationFields[$field])) :
@@ -127,6 +137,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
 <% endforeach; %>
 <% endif; %>
     </table>
+    </div>
 <% if ($groupedFields['text']) : %>
 <% foreach ($groupedFields['text'] as $field) : %>
     <div class="row">
@@ -135,16 +146,22 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
     </div>
 <% endforeach; %>
 <% endif; %>
+</div>
 <%
 $relations = $associations['HasMany'] + $associations['BelongsToMany'];
 foreach ($relations as $alias => $details):
     $otherSingularVar = Inflector::variable($alias);
     $otherPluralHumanName = Inflector::humanize(Inflector::underscore($details['controller']));
     %>
-    <div class="related">
-        <h4><?= __('Related <%= $otherPluralHumanName %>') ?></h4>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title"><?= __('Related <%= $otherPluralHumanName %>') ?></h3>
+        <div class="box-tools">
+        </div>
+    </div>
+    <div class="box-body table-responsive no-padding">
         <?php if (!empty($<%= $singularVar %>-><%= $details['property'] %>)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table table-hover">
             <tr>
 <% foreach ($details['fields'] as $field): %>
                 <th><?= __('<%= Inflector::humanize($field) %>') ?></th>

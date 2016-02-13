@@ -25,39 +25,13 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
     });
 }
 %>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-<% if (strpos($action, 'add') === false): %>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $<%= $singularVar %>-><%= $primaryKey[0] %>],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $<%= $singularVar %>-><%= $primaryKey[0] %>)]
-            )
-        ?></li>
-<% endif; %>
-        <li><?= $this->Html->link(__('List <%= $pluralHumanName %>'), ['action' => 'index']) ?></li>
-<%
-        $done = [];
-        foreach ($associations as $type => $data) {
-            foreach ($data as $alias => $details) {
-                if ($details['controller'] !== $this->name && !in_array($details['controller'], $done)) {
-%>
-        <li><?= $this->Html->link(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New <%= $this->_singularHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']) ?></li>
-<%
-                    $done[] = $details['controller'];
-                }
-            }
-        }
-%>
-    </ul>
-</nav>
-<div class="<%= $pluralVar %> form large-9 medium-8 columns content">
+<div class="<%= $pluralVar %> form box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title"><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>') ?></h3>
+    </div>
     <?= $this->Form->create($<%= $singularVar %>) ?>
-    <fieldset>
-        <legend><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>') ?></legend>
-        <?php
+    <div class="box-body">
+        <fieldset>
 <%
         foreach ($fields as $field) {
             if (in_array($field, $primaryKey)) {
@@ -67,11 +41,15 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
                 $fieldData = $schema->column($field);
                 if (!empty($fieldData['null'])) {
 %>
-            echo $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'empty' => true]);
+            <div class="form-group">
+                <?php echo $this->Form->input('<%= $field %>', array('class' => 'form-control'), ['options' => $<%= $keyFields[$field] %>, 'empty' => true]); ?>
+            </div>
 <%
                 } else {
 %>
-            echo $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>]);
+            <div class="form-group">
+                <?php echo $this->Form->input('<%= $field %>', array('class' => 'form-control'), ['options' => $<%= $keyFields[$field] %>]); ?>
+            </div>        
 <%
                 }
                 continue;
@@ -80,11 +58,15 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
                 $fieldData = $schema->column($field);
                 if (in_array($fieldData['type'], ['date', 'datetime', 'time']) && (!empty($fieldData['null']))) {
 %>
-            echo $this->Form->input('<%= $field %>', ['empty' => true]);
+            <div class="form-group">
+                <?php echo $this->Form->input('<%= $field %>', array('class' => 'form-control'), ['empty' => true]); ?>
+            </div>        
 <%
                 } else {
 %>
-            echo $this->Form->input('<%= $field %>');
+            <div class="form-group">
+                <?php echo $this->Form->input('<%= $field %>', array('class' => 'form-control')); ?>
+            </div>
 <%
                 }
             }
@@ -97,8 +79,10 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
             }
         }
 %>
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+        </fieldset>
+    </div>
+    <div class="box-footer">
+        <?= $this->Form->button(__('Submit')) ?>
+        <?= $this->Form->end() ?>
+    </div>
 </div>
