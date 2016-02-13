@@ -15,7 +15,7 @@
     "autoload": {
         "psr-4": {
             "AdminLTE\\": "src",
-            "AdminLTE\\webroot": "webroot"
+            "AdminLTE\\webroot\\": "webroot"
         }
     }
 }
