@@ -57,8 +57,6 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
         endforeach;
     endforeach;
 %>
-                            <li class="divider"></li>
-                            <li><a href="#">Back</a></li>
                         </ul>
                     </div>
                 </div>
@@ -112,14 +110,6 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-            </div>
-            <div class="box-footer clearfix">
-                <ul class="pagination pagination-sm no-margin pull-right">
-                    <li><?= $this->Paginator->prev('< ' . __('previous')) ?></li>
-                    <li><?= $this->Paginator->numbers() ?></li>
-                    <li><?= $this->Paginator->next(__('next') . ' >') ?></li>
-                </ul>
-                <p><?= $this->Paginator->counter() ?></p>
             </div>
         </div>
     </div>
