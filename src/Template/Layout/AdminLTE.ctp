@@ -61,7 +61,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <div class="wrapper">
       <header class="main-header">
         
-        <a href="index2.html" class="logo">
+        <a href="#" class="logo">
           <span class="logo-mini"><b>A</b>LT</span>
           <span class="logo-lg"><b>Admin</b>LTE</span>
         </a>
@@ -74,13 +74,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs">Murilo Ângelo</span>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="user-header">
                     <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      Alexander Pierce - Web Developer
+                      Murilo Ângelo - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
