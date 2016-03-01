@@ -136,16 +136,16 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
         </tr>
 <% endforeach; %>
 <% endif; %>
-    </table>
-    </div>
 <% if ($groupedFields['text']) : %>
 <% foreach ($groupedFields['text'] as $field) : %>
-    <div class="row">
-        <h4><?= __('<%= Inflector::humanize($field) %>') ?></h4>
-        <?= $this->Text->autoParagraph(h($<%= $singularVar %>-><%= $field %>)); ?>
-    </div>
+        <tr>
+            <th><?= __('<%= Inflector::humanize($field) %>') ?></th>
+            <td><?= $this->Text->autoParagraph(h($<%= $singularVar %>-><%= $field %>)); ?><td>
+        </tr>
 <% endforeach; %>
 <% endif; %>
+    </table>
+    </div>
 </div>
 <%
 $relations = $associations['HasMany'] + $associations['BelongsToMany'];
