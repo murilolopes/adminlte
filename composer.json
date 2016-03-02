@@ -1,12 +1,14 @@
 {
     "name": "muriloangelo/adminlte",
+    "description": "Plugin for CakePHP 3",
+    "homepage": "https://github.com/murilolopes/adminLTE",
     "type": "Plugin",
     "require": {
-        "cakephp/cakephp": "^3.1"
+        "php": ">=5.5.9",
+        "cakephp/cakephp": "~3.2",
+        "cakephp/plugin-installer": "*",
     },
-    "description": "Plugin for CakePHP 3",
     "keywords": ["Theme", "Plugin", "Template", "AdminLTE"],
-    "homepage": "https://github.com/murilolopes/adminLTE",
     "authors": [
         {
             "name": "Murilo Ângelo",
@@ -17,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "AdminLTE\\": "src/",
+            "AdminLTE\\": "src",
         }
     }
 }
