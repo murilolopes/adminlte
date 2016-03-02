@@ -1,6 +1,7 @@
 {
     "name": "muriloangelo/adminlte",
     "type": "Plugin",
+    "minimum-stability": "stable",
     "require": {
         "cakephp/cakephp": "^3.2.2"
     },
