@@ -4,9 +4,7 @@
     "homepage": "https://github.com/murilolopes/adminLTE",
     "type": "Plugin",
     "require": {
-        "php": ">=5.5.9",
         "cakephp/cakephp": "~3.2",
-        "cakephp/plugin-installer": "*",
     },
     "keywords": ["Theme", "Plugin", "Template", "AdminLTE"],
     "authors": [
@@ -19,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "AdminLTE\\": "src",
+            "AdminLTE\\": "src"
         }
     }
 }
