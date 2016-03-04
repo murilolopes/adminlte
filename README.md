@@ -1,4 +1,4 @@
-# AdminLTE dashboard for CakePHP
+# AdminLTE dashboard for CakePHP 3
 
 ## Instalação
 
@@ -21,3 +21,18 @@ Em config/bootstrap.php adicione a seguinte linha:
 ```
 Plugin::load('AdminLTE', ['bootstrap' => true]);
 ```
+
+Em src/Controller/AppController.php adicione ao método beforeRender():
+
+```
+$this->viewBuilder()->layout('AdminLTE.AdminLTE');
+```
+
+## Usando o plugin
+
+Para gerar as views utilizando o plugin basta usar o comando:
+
+```
+cake bake all algumacoisa --theme AdminLTE
+```
+
