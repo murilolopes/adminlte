@@ -1,5 +1,5 @@
 {
-    "name": "muriloangelo/adminlte",
+    "name": "murilolopes/adminlte",
     "description": "AdminLTE plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
@@ -8,12 +8,12 @@
     },
     "autoload": {
         "psr-4": {
-            "murilolopes\\adminLTE\\": "src"
+            "MuriloLopes\\adminLTE\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "murilolopes\\adminLTE\\Test\\": "tests",
+            "MuriloLopes\\AdminLTE\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     },
