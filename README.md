@@ -1,11 +1,23 @@
-# AdminLTE plugin for CakePHP
+# AdminLTE dashboard for CakePHP
 
-## Installation
+## Instalação
 
-You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
-
-The recommended way to install composer packages is:
+Insira a seguinte linha no composer.json do seu projeto:
 
 ```
-composer require muriloangelo/AdminLTE
+"muriloangelo/adminlte": "dev-master"
+```
+
+Atualize com o comando: 
+
+```
+composer update
+```
+
+## Carregando o plugin
+
+Em config/bootstrap.php adicione a seguinte linha:
+
+```
+Plugin::load('AdminLTE', ['bootstrap' => true]);
 ```
