@@ -8,12 +8,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MuriloLopes\\adminLTE\\": "src"
+            "AdminLTE\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MuriloLopes\\AdminLTE\\Test\\": "tests",
+            "AdminLTE\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     },
