@@ -1,6 +1,6 @@
 {
     "name": "murilolopes/adminlte",
-    "description": "AdminLTE plugin for CakePHP",
+    "description": "Theme plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
         "php": ">=5.4.16",
