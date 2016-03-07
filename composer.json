@@ -5,19 +5,5 @@
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "AdminLTE\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "AdminLTE\\Test\\": "tests",
-            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
-        }
-    },
-    "require-dev": {
-        "phpunit/phpunit": "*"
     }
 }
