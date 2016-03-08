@@ -2,6 +2,11 @@
 
 ## Instalação
 
+Execute: 
+```
+compose require murilolopes/adminlte
+```
+
 Insira a seguinte linha no composer.json do seu projeto:
 
 ```
