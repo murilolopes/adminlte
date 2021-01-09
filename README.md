@@ -4,7 +4,7 @@
 
 Execute: 
 ```
-compose require murilolopes/adminlte:dev-master
+composer require murilolopes/adminlte:dev-master
 ```
 Insira a seguinte linha no composer.json do seu projeto:
 
